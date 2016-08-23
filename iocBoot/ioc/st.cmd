@@ -16,9 +16,9 @@ dbLoadRecords "db/mrf-vmeevr230-ttl.db"
 dbLoadRecords "db/mrf-vmeevr230-univ.db"
 dbLoadRecords "db/mrf-vmeevr230-cml.db"
 
-evgConfigure "EVG0" "10.2.1.60" "2000" "125"
-evrConfigure "EVR0" "10.2.1.61" "2000" "125"
-evrConfigure "EVR1" "10.2.1.62" "2000" "125"
+evgConfigure "EVG0" "10.2.6.10" "2000" "125"
+evrConfigure "EVR0" "10.2.6.11" "2000" "125"
+evrConfigure "EVR1" "10.2.6.12" "2000" "125"
 
 asSetFilename("/home/control/epics/support/access/common.acf")
 
