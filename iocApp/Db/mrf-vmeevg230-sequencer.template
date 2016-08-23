@@ -1,0 +1,73 @@
+#
+#
+#
+
+record(bo, "GBL-TI-$(DEVICE)-SEQ$(SEQUENCER):enable")
+{
+	field(DESC, "Enables the sequencer.")
+	field(DTYP, "evg")
+	field(OUT,	"@$(DEVICE):enableSequencer sequencer=$(SEQUENCER)")
+	field(RVAL,	"$(ENABLE)")
+	field(PINI,	"YES")
+	field(ZNAM, "Disable")	field(ZSV, "NO_ALARM")
+	field(ONAM, "Enable")	field(OSV, "NO_ALARM")
+	field(FLNK, "GBL-TI-$(DEVICE)-SEQ$(SEQUENCER):isEnabled")
+}
+
+record(bi, "GBL-TI-$(DEVICE)-SEQ$(SEQUENCER):isEnabled")
+{
+	field(DESC, "Checks if the sequencer is enabled.")
+	field(DTYP, "evg")
+	field(INP,	"@$(DEVICE):isSequencerEnabled sequencer=$(SEQUENCER)")
+	field(ZNAM, "Disabled")	field(ZSV, "NO_ALARM")
+	field(ONAM, "Enabled")	field(OSV, "NO_ALARM")
+}
+
+record(mbbo, "GBL-TI-$(DEVICE)-SEQ$(SEQUENCER):setTriggerSource")
+{
+	field(DESC, "Selects sequencer trigger source.")
+	field(DTYP, "evg")
+	field(OUT,	"@$(DEVICE):setSequencerTriggerSource sequencer=$(SEQUENCER)")
+	field(RVAL,	"$(TRIGGER)")
+	field(PINI,	"YES")
+	field(FLNK, "GBL-TI-$(DEVICE)-SEQ$(SEQUENCER):getTriggerSource")
+
+    field(ZRVL, "0")	field(ZRST, "Soft")	field(ZRSV, "NO_ALARM")
+    field(ONVL, "1")	field(ONST, "Ac") field(ONSV, "NO_ALARM")
+}
+
+record(mbbi, "GBL-TI-$(DEVICE)-SEQ$(SEQUENCER):getTriggerSource")
+{
+	field(DESC, "Reads sequencer trigger source.")
+	field(DTYP, "evg")
+	field(INP,	"@$(DEVICE):getSequencerTriggerSource sequencer=$(SEQUENCER)")
+
+    field(ZRVL, "0")	field(ZRST, "Soft")	field(ZRSV, "NO_ALARM")
+    field(ONVL, "1")	field(ONST, "Ac") field(ONSV, "NO_ALARM")
+}
+
+record(longout, "GBL-TI-$(DEVICE)-SEQ$(SEQUENCER):setPrescaler")
+{
+	field(DESC, "Sets the sequenser prescaler")
+	field(DTYP, "evg")
+	field(OUT,	"@$(DEVICE):setSequencerPrescaler sequencer=$(SEQUENCER)")
+	field(VAL,	"$(PRESCALER)")
+	field(PINI,	"YES")
+	field(FLNK, "GBL-TI-$(DEVICE)-SEQ$(SEQUENCER):getPrescaler")
+}
+
+record(longin, "GBL-TI-$(DEVICE)-SEQ$(SEQUENCER):getPrescaler")
+{
+	field(DESC, "Gets the sequenser prescaler")
+	field(DTYP, "evg")
+	field(INP,	"@$(DEVICE):getSequencerPrescaler sequencer=$(SEQUENCER)")
+}
+
+record(bo, "GBL-TI-$(DEVICE)-SEQ$(SEQUENCER):trigger")
+{
+	field(DESC, "Triggers the sequencer.")
+	field(DTYP, "evg")
+	field(OUT,	"@$(DEVICE):triggerSequencer sequencer=$(SEQUENCER)")
+	field(ZNAM, "")	field(ZSV, "NO_ALARM")
+	field(ONAM, "Trigger")	field(OSV, "NO_ALARM")
+}

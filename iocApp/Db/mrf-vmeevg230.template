@@ -1,0 +1,127 @@
+#
+# Evg
+#
+
+record(bo, "GBL-TI-$(DEVICE):enable")
+{
+	field(DESC, "Enables the event generator")
+	field(DTYP, "evg")
+	field(OUT,	"@$(DEVICE):enable")
+	field(RVAL,	"1")
+	field(PINI,	"YES")
+	field(ZNAM, "Disable")	field(ZSV, "NO_ALARM")
+	field(ONAM, "Enable")	field(OSV, "NO_ALARM")
+	field(FLNK, "GBL-TI-$(DEVICE):isEnabled")
+}
+
+record(bi, "GBL-TI-$(DEVICE):isEnabled")
+{
+	field(DESC, "Check if the device is enabled.")
+	field(DTYP, "evg")
+	field(INP,	"@$(DEVICE):isEnabled")
+	field(ZNAM, "Disable")	field(ZSV, "NO_ALARM")
+	field(ONAM, "Enable")	field(OSV, "NO_ALARM")
+}
+
+record(longin, "GBL-TI-$(DEVICE):getClock")
+{
+	field(DESC, "Returns clock divisor.")
+	field(DTYP, "evg")
+	field(INP,	"@$(DEVICE):getClock")
+	field(PINI,	"YES")
+}
+
+record(mbbo, "GBL-TI-$(DEVICE):setRfClockSource")
+{
+	field(DESC, "Selects RF clock source.")
+	field(DTYP, "evg")
+	field(OUT,	"@$(DEVICE):setRfClockSource")
+	field(RVAL,	"$(RFSOURCE)")
+	field(PINI,	"YES")
+	field(FLNK, "GBL-TI-$(DEVICE):getRfClockSource")
+
+    field(ZRVL, "0")	field(ZRST, "Internal")	field(ZRSV, "NO_ALARM")
+    field(ONVL, "1")	field(ONST, "External") field(ONSV, "NO_ALARM")
+}
+
+record(mbbi, "GBL-TI-$(DEVICE):getRfClockSource")
+{
+	field(DESC, "Reads RF clock source.")
+	field(DTYP, "evg")
+	field(INP,	"@$(DEVICE):getRfClockSource")
+
+    field(ZRVL, "0")	field(ZRST, "Internal")	field(ZRSV, "NO_ALARM")
+    field(ONVL, "1")	field(ONST, "External") field(ONSV, "NO_ALARM")
+}
+
+record(longout, "GBL-TI-$(DEVICE):setRfPrescaler")
+{
+	field(DESC, "Sets the RF prescaler")
+	field(DTYP, "evg")
+	field(OUT,	"@$(DEVICE):setRfPrescaler")
+	field(VAL,	"$(RFPRESCALER)")
+	field(PINI,	"YES")
+	field(FLNK, "GBL-TI-$(DEVICE):getRfPrescaler")
+}
+
+record(longin, "GBL-TI-$(DEVICE):getRfPrescaler")
+{
+	field(DESC, "Gets the RF prescaler")
+	field(DTYP, "evg")
+	field(INP,	"@$(DEVICE):getRfPrescaler")
+}
+
+record(mbbo, "GBL-TI-$(DEVICE):setAcSyncSource")
+{
+	field(DESC, "Selects AC sync source.")
+	field(DTYP, "evg")
+	field(OUT,	"@$(DEVICE):setAcSyncSource")
+	field(RVAL,	"$(ACSYNC)")
+	field(PINI,	"YES")
+	field(FLNK, "GBL-TI-$(DEVICE):getAcSyncSource")
+
+    field(ZRVL, "0")	field(ZRST, "Event")	field(ZRSV, "NO_ALARM")
+    field(ONVL, "1")	field(ONST, "MXC7") field(ONSV, "NO_ALARM")
+}
+
+record(mbbi, "GBL-TI-$(DEVICE):getAcSyncSource")
+{
+	field(DESC, "Reads AC sync source.")
+	field(DTYP, "evg")
+	field(INP,	"@$(DEVICE):getAcSyncSource")
+
+    field(ZRVL, "0")	field(ZRST, "Event")	field(ZRSV, "NO_ALARM")
+    field(ONVL, "1")	field(ONST, "MXC7") field(ONSV, "NO_ALARM")
+}
+
+record(longout, "GBL-TI-$(DEVICE):setAcPrescaler")
+{
+	field(DESC, "Sets the AC prescaler")
+	field(DTYP, "evg")
+	field(OUT,	"@$(DEVICE):setAcPrescaler")
+	field(VAL,	"$(ACPRESCALER)")
+	field(PINI,	"YES")
+	field(FLNK, "GBL-TI-$(DEVICE):getAcPrescaler")
+}
+
+record(longin, "GBL-TI-$(DEVICE):getAcPrescaler")
+{
+	field(DESC, "Gets the AC prescaler")
+	field(DTYP, "evg")
+	field(INP,	"@$(DEVICE):getAcPrescaler")
+}
+
+record(longout, "GBL-TI-$(DEVICE):setSoftwareEvent")
+{
+	field(DESC, "Sets the software event.")
+	field(DTYP, "evg")
+	field(OUT,	"@$(DEVICE):setSoftwareEvent")
+}
+
+record(longin, "GBL-TI-$(DEVICE):getFirmwareVersion")
+{
+	field(DESC, "Gets the firmware version.")
+	field(DTYP, "evg")
+	field(INP,	"@$(DEVICE):getFirmwareVersion")
+	field(PINI,	"YES")
+}

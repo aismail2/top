@@ -1,0 +1,73 @@
+#
+#
+#
+
+record(stringout, "GBL-TI-$(DEVICE)-P$(PULSER):getName")
+{
+	field(DESC, "Gets the name of the pulser device")
+	field(VAL, 	"$(NAME)")
+	field(PINI, "YES")
+}
+
+record(bo, "GBL-TI-$(DEVICE)-P$(PULSER):enable")
+{
+	field(DESC, "Enables the pulser")
+	field(DTYP, "evr")
+	field(OUT,	"@$(DEVICE):enablePulser parameter=$(PULSER)")
+	field(RVAL,	"$(ENABLE)")
+	field(PINI,	"YES")
+	field(ZNAM, "Disable") field(ZSV, "MINOR")
+	field(ONAM, "Enable") field(OSV, "NO_ALARM")
+	field(FLNK, "GBL-TI-$(DEVICE)-P$(PULSER):isEnabled")
+}
+
+record(bi, "GBL-TI-$(DEVICE)-P$(PULSER):isEnabled")
+{
+	field(DESC, "Checks pulser enable status.")
+	field(DTYP, "evr")
+	field(INP,	"@$(DEVICE):isPulserEnabled parameter=$(PULSER)")
+	field(ZNAM, "Disabled") field(ZSV, "NO_ALARM")
+	field(ONAM, "Enabled") field(OSV, "NO_ALARM")
+}
+
+record(ao, "GBL-TI-$(DEVICE)-P$(PULSER):setDelay")
+{
+	field(DESC, "Sets pulser delay")
+	field(DTYP, "evr")
+	field(OUT,	"@$(DEVICE):setPulserDelay parameter=$(PULSER)")
+	field(VAL,	"$(DELAY)")
+	field(PINI,	"YES")
+	field(PREC,	"3")
+	field(EGU, "us")
+	field(FLNK, "GBL-TI-$(DEVICE)-P$(PULSER):getDelay")
+}
+
+record(ai, "GBL-TI-$(DEVICE)-P$(PULSER):getDelay")
+{
+	field(DESC, "Gets pulser delay.")
+	field(DTYP, "evr")
+	field(INP,	"@$(DEVICE):getPulserDelay parameter=$(PULSER)")
+	field(PREC,	"3")
+	field(EGU,	"us")
+}
+
+record(ao, "GBL-TI-$(DEVICE)-P$(PULSER):setWidth")
+{
+	field(DESC, "Sets pulse width")
+	field(DTYP, "evr")
+	field(OUT,	"@$(DEVICE):setPulserWidth parameter=$(PULSER)")
+	field(VAL,	"$(WIDTH)")
+	field(PINI,	"YES")
+	field(PREC,	"3")
+	field(EGU,	"us")
+	field(FLNK, "GBL-TI-$(DEVICE)-P$(PULSER):getWidth")
+}
+
+record(ai, "GBL-TI-$(DEVICE)-P$(PULSER):getWidth")
+{
+	field(DESC, "Gets pulse width")
+	field(DTYP, "evr")
+	field(INP,	"@$(DEVICE):getPulserWidth parameter=$(PULSER)")
+	field(PREC,	"3")
+	field(EGU,	"us")
+}

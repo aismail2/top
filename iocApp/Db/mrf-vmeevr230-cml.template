@@ -1,0 +1,48 @@
+#
+#
+#
+
+record(stringout, "GBL-TI-$(DEVICE)-CML$(CML):getName")
+{
+	field(DESC, "Gets the name of the CML output.")
+	field(VAL, 	"$(NAME)")
+	field(PINI, "YES")
+}
+
+record(bo, "GBL-TI-$(DEVICE)-CML$(CML):enable")
+{
+	field(DESC, "Enables the cml output.")
+	field(DTYP, "evr")
+	field(OUT,	"@$(DEVICE):enableCml parameter=$(CML)")
+	field(RVAL,	"$(ENABLE)")
+	field(PINI,	"YES")
+	field(ZNAM, "Disable") field(ZSV, "MINOR")
+	field(ONAM, "Enable") field(OSV, "NO_ALARM")
+	field(FLNK, "GBL-TI-$(DEVICE)-CML$(CML):isEnabled")
+}
+
+record(bi, "GBL-TI-$(DEVICE)-CML$(CML):isEnabled")
+{
+	field(DESC, "Checks enable status.")
+	field(DTYP, "evr")
+	field(INP,	"@$(DEVICE):isCmlEnabled parameter=$(CML)")
+	field(ZNAM, "Disable") field(ZSV, "NO_ALARM")
+	field(ONAM, "Enable") field(OSV, "NO_ALARM")
+}
+
+record(longout, "GBL-TI-$(DEVICE)-CML$(CML):setPrescaler")
+{
+	field(DESC, "Sets the CML prescaler.")
+	field(DTYP, "evr")
+	field(OUT,	"@$(DEVICE):setCmlPrescaler parameter=$(CML)")
+	field(VAL,	"$(PRESCALE)")
+	field(PINI,	"YES")
+	field(FLNK, "GBL-TI-$(DEVICE)-CML$(CML):getPrescaler")
+}
+
+record(longin, "GBL-TI-$(DEVICE)-CML$(CML):getPrescaler")
+{
+	field(DESC, "Gets the CML prescaler")
+	field(DTYP, "evr")
+	field(INP,	"@$(DEVICE):getCmlPrescaler parameter=$(CML)")
+}

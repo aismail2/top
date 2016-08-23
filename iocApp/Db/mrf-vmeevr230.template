@@ -1,0 +1,59 @@
+#
+#
+#
+
+record(bo, "GBL-TI-$(DEVICE):enable")
+{
+	field(DESC, "Enables the event receiver")
+	field(DTYP, "evr")
+	field(OUT,	"@$(DEVICE):enable")
+	field(RVAL,	"1")
+	field(PINI,	"YES")
+	field(ZNAM, "Disable") field(ZSV, "MINOR")
+	field(ONAM, "Enable") field(OSV, "NO_ALARM")
+	field(FLNK, "GBL-TI-$(DEVICE):isEnabled")
+}
+
+record(bi, "GBL-TI-$(DEVICE):isEnabled")
+{
+	field(DESC, "Returns if the event receiver is enabled")
+	field(DTYP, "evr")
+	field(INP,	"@$(DEVICE):isEnabled")
+	field(ZNAM, "Disabled")	field(ZSV, "MAJOR")
+	field(ONAM, "Enabled")	field(OSV, "NO_ALARM")
+}
+
+record(bo, "GBL-TI-$(DEVICE):resetRxViolation")
+{
+	field(DESC, "Clear RX violation flag.")
+	field(DTYP, "evr")
+	field(OUT,	"@$(DEVICE):resetRxViolation")
+	field(ZNAM, "Clear")	field(ZSV, "NO_ALARM")
+	field(ONAM, "Clear")	field(OSV, "NO_ALARM")
+}
+
+record(bi, "GBL-TI-$(DEVICE):isRxViolation")
+{
+	field(DESC, "Checks Rx violation.")
+	field(SCAN, "5 second")
+	field(DTYP, "evr")
+	field(INP,	"@$(DEVICE):isRxViolation")
+	field(ZNAM, "Ok")			field(ZSV, "NO_ALARM")
+	field(ONAM, "Violation")	field(OSV, "MAJOR")
+}
+
+record(longin, "GBL-TI-$(DEVICE):getClock")
+{
+	field(DESC, "Returns clock divisor.")
+	field(DTYP, "evr")
+	field(INP,	"@$(DEVICE):getClock")
+	field(PINI,	"YES")
+}
+
+record(longin, "GBL-TI-$(DEVICE):getFirwareVersion")
+{
+	field(DESC, "Returns firmware version.")
+	field(DTYP, "evr")
+	field(INP,	"@$(DEVICE):getFirmwareVersion")
+	field(PINI,	"YES")
+}

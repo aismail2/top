@@ -1,0 +1,6 @@
+pattern	{	DEVICE	NAME	SEQUENCER	ADDRESS	EVENT	TIMESTAMP	}
+		{	EVG0	FILL	0			0		1		0			}
+		{	EVG0	END		0			1		0x7F	1			}
+
+		{	EVG0	RAMP	1			0		2		0			}
+		{	EVG0	END		1			1		0x7F	1			}

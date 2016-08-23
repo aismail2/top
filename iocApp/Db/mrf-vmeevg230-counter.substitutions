@@ -1,0 +1,5 @@
+pattern	{	DEVICE	NAME		COUNTER	PRESCALER	}
+		{	EVG0	Vacant		0		16	}
+		{	EVG0	Vacant		1		16	}
+		{	EVG0	Coincidence	7		1776	}
+

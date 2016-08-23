@@ -1,0 +1,10 @@
+pattern	{	NAME	DEVICE	TTL	SOURCE	}
+		{	EXTBUM	EVR0	0	21		}
+		{	EXTKIC	EVR0	1	22		}
+		{	EXTSEP	EVR0	2	23		}
+		{	BOSCO	EVR0	3	24		}
+
+		{	TTL0	EVR1	0	11		}
+		{	TTL1	EVR1	1	12		}
+		{	TTL2	EVR1	2	13		}
+		{	TTL3	EVR1	3	14		}

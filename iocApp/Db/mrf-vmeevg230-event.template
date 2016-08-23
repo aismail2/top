@@ -1,0 +1,44 @@
+#
+#
+#
+
+record(stringout, "GBL-TI-$(DEVICE)-SEQ$(SEQUENCER):getEvent$(ADDRESS)Name")
+{
+	field(DESC, "Gets the event name")
+	field(VAL, 	"$(NAME)")
+	field(PINI, "YES")
+}
+
+record(longout, "GBL-TI-$(DEVICE)-SEQ$(SEQUENCER):setEvent$(ADDRESS)")
+{
+	field(DESC, "Sets the event address")
+	field(DTYP, "evg")
+	field(OUT,	"@$(DEVICE):setEvent sequencer=$(SEQUENCER) address=$(ADDRESS)")
+	field(VAL,	"$(EVENT)")
+	field(PINI,	"YES")
+	field(FLNK, "GBL-TI-$(DEVICE)-SEQ$(SEQUENCER):getEvent$(ADDRESS)")
+}
+
+record(longin, "GBL-TI-$(DEVICE)-SEQ$(SEQUENCER):getEvent$(ADDRESS)")
+{
+	field(DESC, "Sets the event address")
+	field(DTYP, "evg")
+	field(INP,	"@$(DEVICE):getEvent sequencer=$(SEQUENCER) address=$(ADDRESS)")
+}
+
+record(longout, "GBL-TI-$(DEVICE)-SEQ$(SEQUENCER):setTimestamp$(ADDRESS)")
+{
+	field(DESC, "Sets the timestamp")
+	field(DTYP, "evg")
+	field(OUT,	"@$(DEVICE):setTimestamp sequencer=$(SEQUENCER) address=$(ADDRESS)")
+	field(VAL,	"$(TIMESTAMP)")
+	field(PINI,	"YES")
+	field(FLNK, "GBL-TI-$(DEVICE)-SEQ$(SEQUENCER):getTimestamp$(ADDRESS)")
+}
+
+record(longin, "GBL-TI-$(DEVICE)-SEQ$(SEQUENCER):getTimestamp$(ADDRESS)")
+{
+	field(DESC, "Sets the timestamp")
+	field(DTYP, "evg")
+	field(INP,	"@$(DEVICE):getTimestamp sequencer=$(SEQUENCER) address=$(ADDRESS)")
+}

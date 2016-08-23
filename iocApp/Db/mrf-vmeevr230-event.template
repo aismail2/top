@@ -1,0 +1,27 @@
+#
+#
+#
+
+record(stringout, "GBL-TI-$(DEVICE)-E$(EVENT):getName")
+{
+	field(DESC, "Returns the name of the event")
+	field(VAL, 	"$(NAME)")
+	field(PINI,	"YES")
+}
+
+record(longout, "GBL-TI-$(DEVICE)-E$(EVENT):setMap")
+{
+	field(DESC, "Sets the event map.")
+	field(DTYP, "evr")
+	field(OUT, 	"@$(DEVICE):setMap parameter=$(EVENT)")
+	field(VAL,	"$(MAP)")
+	field(PINI,	"YES")
+	field(FLNK, "GBL-TI-$(DEVICE)-E$(EVENT):getMap")
+}
+
+record(longin, "GBL-TI-$(DEVICE)-E$(EVENT):getMap")
+{
+	field(DESC, "Sets the event")
+	field(DTYP, "evr")
+	field(INP, 	"@$(DEVICE):getMap parameter=$(EVENT)")
+}

@@ -1,0 +1,27 @@
+#
+#
+#
+record(stringout, "GBL-TI-$(DEVICE)-C$(COUNTER):getName")
+{
+	field(DESC, "Gets the counter name.")
+	field(VAL, 	"$(NAME)")
+	field(PINI, "YES")
+}
+
+record(longout, "GBL-TI-$(DEVICE)-C$(COUNTER):setPrescaler")
+{
+	field(DESC, "Sets the counter prescaler")
+	field(DTYP,	"evg")
+	field(OUT,	"@$(DEVICE):setCounterPrescaler counter=$(COUNTER)")
+	field(VAL,	"$(PRESCALER)")
+	field(PINI,	"YES")
+	field(FLNK, "GBL-TI-$(DEVICE)-C$(COUNTER):getPrescaler")
+}
+
+record(longin, "GBL-TI-$(DEVICE)-C$(COUNTER):getPrescaler")
+{
+	field(DESC, "Gets the counter prescaler")
+	field(DTYP,	"evg")
+	field(INP,	"@$(DEVICE):getCounterPrescaler counter=$(COUNTER)")
+}
+
