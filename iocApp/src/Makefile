@@ -16,13 +16,16 @@ DBD += ioc.dbd
 ioc_DBD += base.dbd
 ioc_DBD += evg.dbd
 ioc_DBD += evr.dbd
+ioc_DBD += power_seq.dbd
 
 # Add all the support libraries needed by this IOC
 ioc_LIBS += evg
 ioc_LIBS += evr
+ioc_LIBS += seq pv
 
 # ioc_registerRecordDeviceDriver.cpp derives from ioc.dbd
 ioc_SRCS += ioc_registerRecordDeviceDriver.cpp
+ioc_SRCS += power_seq.st
 
 # Build the main IOC entry point on workstation OSs.
 ioc_SRCS_DEFAULT += iocMain.cpp
@@ -34,6 +37,7 @@ ioc_SRCS_vxWorks += -nil-
 # Finally link to the EPICS Base libraries
 ioc_LIBS += $(EPICS_BASE_IOC_LIBS)
 
+ioc_seq_SNCFLAGS += +r
 #===========================
 
 include $(TOP)/configure/RULES

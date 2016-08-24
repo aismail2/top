@@ -22,6 +22,7 @@ DB += mrf-vmeevr230-prescaler.db
 DB += mrf-vmeevr230-ttl.db
 DB += mrf-vmeevr230-univ.db
 DB += mrf-vmeevr230-cml.db
+DB += power_seq.db
 
 #----------------------------------------------------
 # If <anyname>.db template is not named <anyname>*.template add
