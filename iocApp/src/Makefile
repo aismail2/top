@@ -19,7 +19,6 @@ ioc_DBD += evr.dbd
 ioc_DBD += power_seq.dbd
 ioc_DBD += safe_polarity_switcher.dbd
 ioc_DBD += extkic.dbd
-ioc_DBD += microtron_polarity_switcher.dbd
 ioc_DBD += waterflowMonitor.dbd
 ioc_DBD += freq_shift.dbd
 
@@ -33,7 +32,6 @@ ioc_SRCS += ioc_registerRecordDeviceDriver.cpp
 ioc_SRCS += power_seq.st
 ioc_SRCS += safe_polarity_switcher.st
 ioc_SRCS += extkic.st
-ioc_SRCS += microtron_polarity_switcher.st
 ioc_SRCS += waterflowMonitor.st
 ioc_SRCS += freq_shift.st
 
@@ -44,7 +42,6 @@ ioc_SRCS_vxWorks += -nil-
 ioc_seq_SNCFLAGS 			+= +r
 safe_polarity_switcher_SNCFLAGS         += +r
 extkic_SNCFLAGS                         += +r
-microtron_polarity_switcher_SNCFLAGS    += +r
 waterflowMonitor_SNCFLAGS               += +r
 freq_shift_SNCFLAGS 			+= +r
 
