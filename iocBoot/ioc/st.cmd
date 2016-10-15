@@ -26,24 +26,8 @@ asSetFilename("/home/control/epics/support/access/common.acf")
 
 iocInit
 
-seq safe_polarity_switcher, "SYSTEM=BOC01,DEVICE=CR1,CHANNEL=1"
-seq safe_polarity_switcher, "SYSTEM=BOC02,DEVICE=CR1,CHANNEL=1"
-seq safe_polarity_switcher, "SYSTEM=BOC03,DEVICE=CR1,CHANNEL=1"
-seq safe_polarity_switcher, "SYSTEM=BOC04,DEVICE=CR1,CHANNEL=1"
-seq safe_polarity_switcher, "SYSTEM=BOC05,DEVICE=CR1,CHANNEL=1"
-seq safe_polarity_switcher, "SYSTEM=BOC06,DEVICE=CR1,CHANNEL=1"
-seq safe_polarity_switcher, "SYSTEM=MI,DEVICE=DC1,CHANNEL=1"
-seq safe_polarity_switcher, "SYSTEM=MI,DEVICE=DC1,CHANNEL=2"
-seq safe_polarity_switcher, "SYSTEM=MI,DEVICE=DC2,CHANNEL=1"
-seq safe_polarity_switcher, "SYSTEM=MI,DEVICE=DC2,CHANNEL=2"
-seq safe_polarity_switcher, "SYSTEM=TL1,DEVICE=DC1,CHANNEL=1"
-seq safe_polarity_switcher, "SYSTEM=TL1,DEVICE=DC1,CHANNEL=2"
-seq safe_polarity_switcher, "SYSTEM=TL1,DEVICE=DC2,CHANNEL=1"
-seq safe_polarity_switcher, "SYSTEM=TL1,DEVICE=DC2,CHANNEL=2"
-seq safe_polarity_switcher, "SYSTEM=TL1,DEVICE=DC3,CHANNEL=1"
-seq safe_polarity_switcher, "SYSTEM=TL1,DEVICE=DC3,CHANNEL=2"
-seq safe_polarity_switcher, "SYSTEM=TL1,DEVICE=DC4,CHANNEL=1"
-seq safe_polarity_switcher, "SYSTEM=TL1,DEVICE=DC4,CHANNEL=2"
+seq TL1_safe_polarity_switcher, "SYSTEM=MI-PS-TC4-INV"
+seq TL1_safe_polarity_switcher, "SYSTEM=TL1-PS-CR1-X-INV"
 seq extkic
 seq waterflowMonitor
 seq power_seq

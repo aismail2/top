@@ -1,10 +1,10 @@
 pattern	{	NAME	DEVICE	PDP		ENABLE	PRESCALE	DELAY	WIDTH	}
-		{	BOSHA	EVR0	0		1		1			0		0		}
-		{	VACANT	EVR0	1		1		1			0		0		}
-		{	VACANT	EVR0	2		1		1			0		0		}
-		{	VACANT	EVR0	3		1		1			0		0		}
+		{	BOSHA	EVR0	0		1		1			0		2.0		}
+		{	VACANT	EVR0	1		1		1			0		2.0		}
+		{	VACANT	EVR0	2		1		1			0		2.0		}
+		{	VACANT	EVR0	3		1		1			0		2.0		}
 
-		{	SRSHA	EVR1	0		1		1			0		0		}
-		{	PLC		EVR1	1		1		1			0		0		}
-		{	VACANT	EVR1	2		1		1			0		0		}
-		{	VACANT	EVR1	3		1		1			0		0		}
+		{	VACANT	EVR1	0		1		1			0		2.0		}
+		{	VACANT	EVR1	1		1		1			0		2.0		}
+		{	VACANT	EVR1	2		1		1			0		2.0		}
+		{	VACANT	EVR1	3		1		1			0		2.0		}

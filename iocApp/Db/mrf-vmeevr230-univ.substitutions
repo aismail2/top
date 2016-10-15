@@ -1,10 +1,10 @@
 pattern	{	NAME	DEVICE	UNIV	SOURCE	}
-		{	BOSHA	EVR0	0		0		}
-		{	TL2CAM	EVR0	1		24		}
-		{	UNIV1	EVR0	2		0		}
-		{	BOCLK	EVR0	3		40		}
+		{	BOCLK	EVR0	0		40		}
+		{	BOSHA	EVR0	1		0		}
+		{	DISCO	EVR0	2		23		}
+		{	TISCO	EVR0	3		24		}
 
-		{	SRSHA	EVR1	0		0		}
-		{	SRPLC	EVR1	1		1		}
-		{	UNIV2	EVR1	2		11		}
-		{	BOCLK	EVR1	3		40		}
+		{	UNIV0	EVR1	0		21		}
+		{	UNIV1	EVR1	1		22		}
+		{	UNIV2	EVR1	2		23		}
+		{	UNIV3	EVR1	3		24		}

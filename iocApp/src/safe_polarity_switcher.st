@@ -7,12 +7,12 @@ char isEnabled;
 char enable;
 char disable;
 
-assign getPolarity to "{SYSTEM}-PS-{DEVICE}-CH{CH}-INV:getPolarity";
-assign setPolarity to "{SYSTEM}-PS-{DEVICE}-CH{CH}-INV:setPolarity";
-assign setPolarityImpl to "{SYSTEM}-PS-{DEVICE}-CH{CH}-INV:setPolarityReal";
-assign isEnabled to "{SYSTEM}-PS-{DEVICE}-CH{CH}:isEnabled";
-assign enable to "{SYSTEM}-PS-{DEVICE}-CH{CH}:enable";
-assign disable to "{SYSTEM}-PS-{DEVICE}-CH{CH}:disable";
+assign getPolarity to "{SYSTEM}-INV:getPolarity";
+assign setPolarity to "{SYSTEM}-INV:setPolarity";
+assign setPolarityImpl to "{SYSTEM}-INV:setPolarityReal";
+assign isEnabled to "{SYSTEM}:isEnabled";
+assign enable to "{SYSTEM}:enable";
+assign disable to "{SYSTEM}:disable";
 
 monitor getPolarity;
 monitor setPolarity;
