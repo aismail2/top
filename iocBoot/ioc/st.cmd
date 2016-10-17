@@ -15,20 +15,16 @@ dbLoadRecords "db/mrf-vmeevr230-prescaler.db"
 dbLoadRecords "db/mrf-vmeevr230-ttl.db"
 dbLoadRecords "db/mrf-vmeevr230-univ.db"
 dbLoadRecords "db/mrf-vmeevr230-cml.db"
-dbLoadRecords "db/power_seq.db"
-dbLoadRecords("db/power-seq-extkic.db")
 
+# 
+# Configuration parameters:
+# 	1. Card name, must be identical to that used in the substitution files.
+# 	2. IP address of the card (or the URL is DNS is used).
+# 	3. UDP port used on the card, default is 2000.
+# 	4. Event frequency in MHz (500MHz/4=125MHz at SESAME).
+#
 evgConfigure "EVG0" "gbl-ti-evg" "2000" "125"
 evrConfigure "EVR0" "gbl-ti-evr1" "2000" "125"
 evrConfigure "EVR1" "gbl-ti-evr2" "2000" "125"
 
-asSetFilename("/home/control/epics/support/access/common.acf")
-
 iocInit
-
-seq TL1_safe_polarity_switcher, "SYSTEM=MI-PS-TC4-INV"
-seq TL1_safe_polarity_switcher, "SYSTEM=TL1-PS-CR1-X-INV"
-seq extkic
-seq waterflowMonitor
-seq power_seq
-seq freq_shift
