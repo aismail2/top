@@ -1,5 +1,5 @@
 pattern	{	DEVICE	NAME	EVENT	MAP		}
 		{	EVR0	FILL	1		0x3FFF	}
 
-		{	EVR1	FILL	1		0x3FFD	}
-		{	EVR1	RAMP	2		0x0004	}
+		{	EVR1	FILL	1		0x3FF7	}
+		{	EVR1	RAMP	2		0x0008	}
